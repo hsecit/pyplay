@@ -7,6 +7,7 @@ class HashTag:
         self.lines = self.file.readlines()
         self.posts = self.build()
         self.hashtags = self._filter()
+        self.topten = self.topten_tags()
 
     def topten_tags(self):
         occurence_dict = self.occurence()
@@ -53,8 +54,7 @@ class HashTag:
 
     def build(self):
         text = ""
-        lines = self.file.readlines()
-        for el in lines:
+        for el in self.lines:
             if el != "\n" and self.is_number(el) == False:
                 text += el
         return text
@@ -66,7 +66,7 @@ class Application():
         
 # Test
 
-# t = HashTag()
+t = HashTag()
 
-# print(len(t.show_bytag('#follow4follow')))
-# # print(t.lines)
+print(len(t.show_bytag('#follow4follow')))
+# print(t.topten)
