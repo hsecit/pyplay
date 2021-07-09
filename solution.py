@@ -118,3 +118,8 @@ with open("data",'r') as f :
        posts_bytag = show_post_bytag(lines,tag)
        for p in posts_bytag:
            print(colored(f"\n{p}",'white'))
+
+
+
+
+		
